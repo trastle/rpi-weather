@@ -6,4 +6,58 @@ title: Connecting the weather station to the MetOffice
 <section>
     <h3>Connecting the weather station to the MetOffice</h3>
 
+
+
+<h4>1. Setting up live data logging</4>
+<p>Decide how often you want to report data to WOW, and set the interval using the command below, I have chosen to upload every 15 minutes.</p>
+<pre>python ~/weather/pywws/code/SetWeatherStation.py -r 15</pre>
+
+<p>In order for the live logger to continue running it is necessary to restart the logger if it stops for any reason (a reboot for example). The following instructions will download a script to keep the live logger running:</p>
+<pre>mkdir -p ~/weather/scripts
+cd ~/weather/scripts
+wget https://raw.github.com/trastle/rpi-weather/master/cron/pywws-live.sh
+chmod 755 pywws-live.sh</pre>
+
+<h4>2. Cron</h4>
+<p>The script is designed to be run by the Linux cron service, in order to install the script into your cron service you must do the following:
+Open your crontab</p>
+<pre>crontab -e</pre>
+<p>Append the following line to the end of the:</p>
+<pre>25,55 * * * *       /home/pi/weather/scripts/pywws-live.sh</pre>
+<p>Save and close the file by hitting.</p>
+<pre>Crtl + x</p>
+<p>At the terminal enter the command:<p>
+<pre>/home/pi/weather/scripts/pywws-live.sh</pre>
+<p>Your weather station should now be collecting data every 15 minutes.</p>
+
+
+<h4>3. Connecting the weather station to wow.metoffice.gov.uk</h4>
+<p>First you’ll need to logon to <a href="wow.metoffice.gov.uk">wow.metoffice.gov.uk</a> and create a site.
+During the site creation process you’ll be asked to enter a six digit automated weather station pin. Make note of the PIN you enter along with the Site Id you are allocated.</p>
+
+<p>The first time you started pywws a file weather.ini was created in your data directory. Open the file  now:</p>
+<pre>nano /home/pi/weather/data/weather.ini</pre>
+
+<p>Scroll down through the file until you find the [logged] section. Add the MetOffice to the list of logged services: </p>
+
+<pre>[logged]
+services = ['metoffice']
+twitter = []
+plot = []
+text = []</pre>
+
+<p>Scroll down to the end of the file and add the following section, switching out the dummy values for your site id and automatic weather station PIN.</p>
+
+<pre>[metoffice]
+site id = 11111111
+aws pin = 123456</pre>
+
+<p>Save and close the file.</p>
+
+<p>Restart the live logger application so that it can re-load your configuration:</p>
+<pre>killalll python
+/home/pi/weather/scripts/pywws-live.sh</pre>
+
+
+
 </section>
