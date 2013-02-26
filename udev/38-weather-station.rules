@@ -1,5 +1,5 @@
-# WH-1081 Weather Station
-# -----------------------
+# WH-1081 Weather Station udev rule for a Raspberry Pi
+# ----------------------------------------------------
 # Full credit to the original author: http://www.weather-watch.com/smf/index.php?topic=39257
 
 ACTION!="add|change", GOTO="weather_station_end"
