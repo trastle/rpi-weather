@@ -18,15 +18,15 @@ cd ~/weather/scripts
 wget https://raw.github.com/trastle/rpi-weather/master/cron/pywws-live.sh
 chmod 755 pywws-live.sh</pre>
 
-<h4>2. Cron</h4>
+<h4>2. Add the live logger script to cron</h4>
 <p>The script is designed to be run by the Linux cron service, in order to install the script into your cron service you must do the following:
-Open your crontab</p>
+Open your crontab:</p>
 <pre>crontab -e</pre>
 <p>Append the following line to the end of the:</p>
 <pre>25,55 * * * *       /home/pi/weather/scripts/pywws-live.sh</pre>
-<p>Save and close the file by hitting.</p>
-<pre>Crtl + x</p>
-<p>At the terminal enter the command:<p>
+<p>Save and close the file by hitting:</p>
+<pre>Crtl + x</pre>
+<p>To start the pywws weather station software enter the commend:<p>
 <pre>/home/pi/weather/scripts/pywws-live.sh</pre>
 <p>Your weather station should now be collecting data every 15 minutes.</p>
 
