@@ -19,12 +19,12 @@ title: Installing the weather station software on your Raspberry Pi
     <p>This step will install the prerequisite software we need to run pywws.</p>
     <pre>sudo apt-get install libusb-1.0.0 python-usb python-crypto python-paramiko gnuplot gettext sphinx-common</pre>
 
-    <h4>4: Install twitter prerequisites (optional)</h4>
-    <p>If you want the option to enable twitter integration (a tweeting weather station) then you will need to
-    install some twitter dependancies. If you do not want twitter support skip this step.</p>
+    <p>The following <strong>optional</strong> command installs the software required for twitter integration (a tweeting weather station).</p>
     <pre>sudo apt-get install python-tweepy python-simplejson</pre>
 
-    <h4>5: Installing the weather station software</h4>
+    <h4>4: Installing the weather station software</h4>
+    <p>The following series of commands will download, build and install the 
+    <a href="http://jim-easterbrook.github.com/pywws/doc/en/html/index.html">pywws weather station software</a>.</p>
     <pre>mkdir ~/weather
 cd ~/weather
 git clone https://github.com/jim-easterbrook/pywws.git
@@ -34,6 +34,6 @@ python setup.py build
 sudo python setup.py install
 </pre>
 
-    <a href="./gettingConnected.html">Next Step: Connecting your weather station to your Raspberry Pi</a>
+    <strong><a href="./gettingConnected.html">Next Step: Connecting your weather station to your Raspberry Pi</a></scrong>
 
 </section>
