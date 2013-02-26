@@ -45,9 +45,13 @@ isRunning()
   log "Checking pid file [$1]"
   [ "$1" = "" ]  && return 0
   [ ! -f "$1" ]  && return 0
-  local pywwspid=`cat $1`
-  log "Checking for pywws process [$pywwspid]"
-  [ `pgrep -n $pywwspid` ] && return 1 || return 0
+  local pywwspid=`pgrep -F $1`
+  log "Found running process [$pywwspid]"
+if [ "$pywwspid" = "" ]; then
+      return 0;
+  else
+      return 1;
+  fi
 }
 
 # Main
