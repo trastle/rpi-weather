@@ -3,6 +3,6 @@
 # Full credit to the original author: http://www.weather-watch.com/smf/index.php?topic=39257
 
 ACTION!="add|change", GOTO="weather_station_end"
-SUBSYSTEM=="usb", ATTRS{idVendor}=="1941", ATTRS{idProduct}=="8021", GROUP="weather"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1941", ATTRS{idProduct}=="8021", GROUP="pi"
 
 LABEL="weather_station_end"
