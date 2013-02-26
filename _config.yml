@@ -2,7 +2,7 @@
 name: Rpi-weather
 
 # Short description (goes below the title; it will also be used in the RSS feed)
-description: This is a sample Jekyll Blog.
+description: Instructions and support code for getting a cheap USB weather station connected to the Met Office <a href="http://wow.metoffice.gov.uk">wow.metoffice.gov.uk</a> using a Raspberry Pi.
 
 # Your name, as you want it to appear underneath each post and in the footer
 author: trastle
