@@ -3,7 +3,7 @@
 
 body {
   padding:50px;
-  font:15px Ubuntu, Helvetica, Arial, sans-serif;
+  font:15px/1.5 Ubuntu, Helvetica, Arial, sans-serif;
   color:#444;
   font-weight:300;
 }
