@@ -71,6 +71,10 @@ pre {
   overflow-x: auto;
 }
 
+.nextPage {
+  font-weight:600;
+}
+
 table {
   width:100%;
   border-collapse:collapse;
@@ -252,10 +256,4 @@ footer {
     font-size:12pt;
     color:#444;
   }
-}
-
-
-.nextPage
-{
-    font-weight:600;
 }
