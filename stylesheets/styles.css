@@ -76,6 +76,10 @@ pre {
   font-size: 0.9em;
 }
 
+.centered {
+  text-align: center;
+}
+
 table {
   width:100%;
   border-collapse:collapse;
