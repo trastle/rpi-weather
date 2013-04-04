@@ -23,7 +23,9 @@ chmod 755 pywws-live.sh</pre>
 Open your crontab:</p>
 <pre>crontab -e</pre>
 <p>Append the following line to the end of the:</p>
-<pre>25,55 * * * *       /home/pi/weather/scripts/pywws-live.sh</pre>
+<pre>
+@reboot /home/pi/weather/scripts/pywws-live.py
+25,55 * * * *       /home/pi/weather/scripts/pywws-live.sh</pre>
 <p>Save and close the file by hitting:</p>
 <pre>Crtl + x</pre>
 <p>To start the pywws weather station software enter the commend:<p>
