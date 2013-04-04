@@ -9,7 +9,7 @@ title: Connecting the weather station to the MetOffice
 
 
 <h4>1. Setting up live data logging</h4>
-<p>Decide how often you want to report data to WOW, and set the interval using the command below, I have chosen to upload every 15 minutes.</p>
+<p>Decide how often you want to report data to WOW, and set the interval using the command below, <a href="http://wow.metoffice.gov.uk/support/faq#6.6">the Met Office WOW FAQ suggests you upload data every 15 minutes</a>.</p>
 <pre>python ~/weather/pywws/code/SetWeatherStation.py -r 15</pre>
 
 <p>In order for the live logger to continue running it is necessary to restart the logger if it stops for any reason (a reboot for example). The following instructions will download a script to keep the live logger running:</p>
